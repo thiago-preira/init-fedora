@@ -6,6 +6,10 @@ sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/dock
 
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
+sudo dnf -y install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+
+sudo dnf  -y install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
 
 sudo dnf -y install brave-browser    
 sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
